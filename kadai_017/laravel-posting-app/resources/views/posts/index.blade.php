@@ -16,10 +16,10 @@
              <div class="card-body">
                  <h2 class="card-title fs-5">{{ $post->title }}</h2>
                  <p class="card-text">{{ $post->content }}</p>
-                 <!-- 更新日時の取得-->
+                 <!-- 投稿日時の取得-->
                  <p>
                  <?php
-                   $timestamp = $post->update_at ; 
+                   $timestamp = $post->created_at ; 
                    echo date("Y/m/d H:i", $timestamp) ;
                    ?> 
                  </p>                  

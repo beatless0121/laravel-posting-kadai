@@ -51,6 +51,8 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'content' => 'required',
+            'title' => 'required|max:40',       // バリテーション「タイトル：最大文字数40文字」追加
+            'content' => 'required|max:200',    // バリテーション「本文: 最大文字数200文字」追加
         ]);
         
         $post->title = $request->input('title');
