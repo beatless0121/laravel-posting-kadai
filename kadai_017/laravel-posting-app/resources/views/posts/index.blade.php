@@ -16,13 +16,13 @@
              <div class="card-body">
                  <h2 class="card-title fs-5">{{ $post->title }}</h2>
                  <p class="card-text">{{ $post->content }}</p>
-                 <!-- 投稿日時の取得-->
+                  <!-- 投稿日時の取得-->
                  <p>
-                 <?php
-                   $timestamp = $post->created_at ; 
-                   echo date("Y/m/d H:i", $timestamp) ;
-                   ?> 
-                 </p>                  
+                    <?php
+                     $timestamp = strtotime($post->updated_at) ; 
+                      echo date("Y/m/d H:i", $timestamp) ;
+                    ?> 
+                 </p>           
                  
                  <div class="d-flex">
                      <a href="{{ route('posts.show', $post) }}" class="btn btn-outline-primary d-block me-1">詳細</a>

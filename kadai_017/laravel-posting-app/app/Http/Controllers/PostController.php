@@ -49,8 +49,6 @@ class PostController extends Controller
      // 更新機能
      public function update(Request $request, Post $post) {
         $request->validate([
-            'title' => 'required',
-            'content' => 'required',
             'title' => 'required|max:40',       // バリテーション「タイトル：最大文字数40文字」追加
             'content' => 'required|max:200',    // バリテーション「本文: 最大文字数200文字」追加
         ]);
